@@ -1,0 +1,58 @@
+<%= render :partial => 'home/navbar' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <%= form_for @info do |i| %>
+
+        <div class="row">
+          <%= i.text_field :first_name, :placeholder => "First Name" %>
+
+          <%= i.text_field :last_name, :placeholder => "Last Name" %>
+        </div>
+  
+        <%= i.text_field :street_one, :placeholder => "Street Address" %>
+
+        <%= i.text_field :street_two, :placeholder => "Street Address" %>
+
+        <%= i.label :city %>
+        <%= i.select :city, Option::CITIES %>
+
+        <%= i.label :province %>
+        <%= i.select :province, Option::PROVINCES %>
+
+        <%= i.label :latest_condition %>
+        <%= i.select :latest_condition, Option::CONDITIONS %>
+
+        <%= i.label :with_relief_goods %>
+        <%= i.text_field :with_relief_goods %>
+        
+        <%= i.radio_button :with_relief_goods, true %> <%= i.label :with_relief_goods, "Yes" %>
+        <%= i.radio_button :with_relief_goods, false %> <%= i.label :with_relief_goods, "No" %>
+
+        <%= i.radio_button :mobile_signal, true %> <%= i.label :mobile_signal, "Yes" %>
+        <%= i.radio_button :mobile_signal, false %> <%= i.label :mobile_signal, "No" %>
+        
+        <% for need in Option::URGENT_NEEDS %>
+          <%= check_box_tag :urgent_needs, need %> <%= need %>
+        <% end %>
+
+        <%= i.label :comments %>
+        <%= i.text_area :comments %>
+
+        <%= i.label :contact_person %>
+        <%= i.text_field :contact_person %>
+
+        <%= i.label :contact_phone %>
+        <%= i.text_field :contact_phone %>
+
+        <%= i.label :contact_email %>
+        <%= i.text_field :contact_email %>
+      <% end %>
+    </div>
+    
+    <div class="col-md-4">
+    </div>
+
+  </div>
+</div>

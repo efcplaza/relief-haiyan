@@ -5,8 +5,13 @@
       <h1>#ReliefPH</h1>
       
       <div class="help-buttons">
-        <button class="btn btn-primary">We need help</button><br />
+        <%= link_to new_information_path do %>
+          <button class="btn btn-primary">I need help</button>
+        <% end %>
+          <br />
         <button class="btn btn-success">I can help</button>
+        <br />
+      <button class="btn btn-warning">Donate now</button>
       </div>
     </div>
     
