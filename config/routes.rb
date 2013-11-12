@@ -1,6 +1,12 @@
 ReliefHaiyan::Application.routes.draw do
+  get "home/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
+
+  root :to => 'home#index'
+  
+  get 'donate' => 'home#donate'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
