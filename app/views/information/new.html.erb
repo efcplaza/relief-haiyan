@@ -2,43 +2,76 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
-      <%= form_for @info do |i| %>
+    <div class="col-md-6">
+    <%= form_for(@info, :html => {:class => 'form-horizontal'}) do |i| %>
 
-        <div class="row">
-          <%= i.text_field :first_name, :placeholder => "First Name" %>
-
-          <%= i.text_field :last_name, :placeholder => "Last Name" %>
+      <div class="form-group">
+        <%= i.label :first_name, :class => "control-label col-sm-3" %>
+        <div class="col-sm-9">
+          <%= i.text_field :first_name, :class => "form-control" %>
         </div>
-  
-        <%= i.text_field :street_one, :placeholder => "Street Address" %>
+      </div>
+      
+      <div class="form-group">
+        <%= i.label :last_name, :class => "control-label col-sm-3" %>
+        <div class="col-sm-9">
+          <%= i.text_field :last_name, :class => "form-control" %>
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <label class="control-label col-sm-3">Street</label>
+        <div class="col-sm-9">
+          <%= i.text_field :street_one, :class => "form-control" %>
+          <%= i.text_field :street_two, :class => "form-control" %>
+        </div>
+      </div>
+      
+      <div class="form-group">    
+        <%= i.label :city, :class => "control-label col-sm-3" %>
+        <div class="col-sm-9">
+          <%= i.select :city, Option::CITIES, {}, :class => "form-control" %>
+        </div>
+      </div>
 
-        <%= i.text_field :street_two, :placeholder => "Street Address" %>
-
-        <%= i.label :city %>
-        <%= i.select :city, Option::CITIES %>
-
-        <%= i.label :province %>
-        <%= i.select :province, Option::PROVINCES %>
-
-        <%= i.label :latest_condition %>
-        <%= i.select :latest_condition, Option::CONDITIONS %>
-
-        <%= i.label :with_relief_goods %>
-        <%= i.text_field :with_relief_goods %>
-        
-        <%= i.radio_button :with_relief_goods, true %> <%= i.label :with_relief_goods, "Yes" %>
-        <%= i.radio_button :with_relief_goods, false %> <%= i.label :with_relief_goods, "No" %>
-
-        <%= i.radio_button :mobile_signal, true %> <%= i.label :mobile_signal, "Yes" %>
-        <%= i.radio_button :mobile_signal, false %> <%= i.label :mobile_signal, "No" %>
-        
+      <div class="form-group">
+        <%= i.label :province, :class => "control-label col-sm-3" %>
+        <div class="col-sm-9">
+          <%= i.select :province, Option::PROVINCES, {}, :class => "form-control" %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <%= i.label :latest_condition, :class => "control-label col-sm-3" %>
+        <div class="col-sm-9">
+          <%= i.select :latest_condition, Option::CONDITIONS, {}, :class => "form-control" %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="control-label col-sm-3">With relief goods?</label>
+        <div class="col-sm-9">
+          <%= i.radio_button :with_relief_goods, true %> <%= i.label :with_relief_goods, "Yes" %>
+          <%= i.radio_button :with_relief_goods, false %> <%= i.label :with_relief_goods, "No" %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="control-label col-sm-3">Mobile phone signal?</label>
+        <div class="col-sm-9">
+          <%= i.radio_button :mobile_signal, true %> <%= i.label :mobile_signal, "Yes" %>
+          <%= i.radio_button :mobile_signal, false %> <%= i.label :mobile_signal, "No" %>
+        </div>
+      </div>  
+      
         <% for need in Option::URGENT_NEEDS %>
           <%= check_box_tag :urgent_needs, need %> <%= need %>
         <% end %>
 
+      <div class="form-group">
         <%= i.label :comments %>
         <%= i.text_area :comments %>
+      </div>
 
         <%= i.label :contact_person %>
         <%= i.text_field :contact_person %>
