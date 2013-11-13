@@ -1,3 +1,21 @@
 // Place all the styles related to the information controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.form-new-info {
+  
+  border-right: 1px solid #C8C7C9;
+  padding: 10px;
+  
+  textarea {
+    height: 100px !important;
+  }
+  
+  input[type=submit] {
+    width: 95px;
+  }
+  
+  .submit {
+    padding-right: 15px;
+  }
+}

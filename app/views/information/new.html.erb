@@ -2,7 +2,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 form-new-info">
     <%= form_for(@info, :html => {:class => 'form-horizontal'}) do |i| %>
 
       <div class="form-group">
@@ -64,27 +64,58 @@
         </div>
       </div>  
       
-        <% for need in Option::URGENT_NEEDS %>
-          <%= check_box_tag :urgent_needs, need %> <%= need %>
-        <% end %>
-
+      
       <div class="form-group">
-        <%= i.label :comments %>
-        <%= i.text_area :comments %>
+        <label class="control-label col-sm-3">Urgent Needs</label>
+        <div class="col-sm-9">
+          <%= i.text_area :urgent_needs, :class => "form-control" %>
+        </div>
       </div>
 
-        <%= i.label :contact_person %>
-        <%= i.text_field :contact_person %>
+      <div class="form-group">
+        <%= i.label :comments, :class => "control-label col-sm-3" %>
+        <div class="col-sm-9">
+          <%= i.text_area :comments, :class => "form-control" %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <%= i.label :contact_person, :class => "control-label col-sm-3" %>
+        <div class="col-sm-9">
+          <%= i.text_field :contact_person, :class => "form-control" %>
+        </div>
+      </div>
 
-        <%= i.label :contact_phone %>
-        <%= i.text_field :contact_phone %>
+      <div class="form-group">
+        <%= i.label :contact_phone, :class => "control-label col-sm-3" %>
+        <div class="col-sm-9">
+          <%= i.text_field :contact_phone, :class => "form-control" %>
+        </div>
+      </div>
 
-        <%= i.label :contact_email %>
-        <%= i.text_field :contact_email %>
+      <div class="form-group">
+        <%= i.label :contact_email, :class => "control-label col-sm-3" %>
+        <div class="col-sm-9">
+          <%= i.text_field :contact_email, :class => "form-control" %>
+        </div>
+      </div>
+        
+      <div class="form-group submit">
+        <%= i.submit "Submit", :class => "btn btn-info pull-right"%>
+      </div>
+        
       <% end %>
     </div>
     
     <div class="col-md-4">
+      <div class="alert alert-warning">
+        <h4>If you know someone who needs help, please enter his or her information here.</h4>
+        <p>Kindly enter complete information about the person who needs immediate attention. We will try our best to disseminate the information to authorities and non-profit organizations who are doing the relief operations.</p>
+      </div>
+      
+      <div class="alert alert-danger">
+        <p><strong>Important:</strong> Make sure to enter your name and contact number as the contact person so you can be easily reached by us or the respective organizations doing the relief efforts. You may also assign another person to be the contact.</p>
+      </div>
     </div>
 
   </div>
