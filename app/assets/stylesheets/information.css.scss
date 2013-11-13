@@ -40,3 +40,17 @@
      cursor: pointer;
   }
 }
+
+.add-comment {
+  border-top: 1px solid #DDDDDD;
+  padding-top: 15px;
+  
+  textarea {
+    height: 100px !important;
+    margin-bottom: 15px;
+  }
+  
+  input[type=submit] {
+    margin: 15px;
+  }
+}

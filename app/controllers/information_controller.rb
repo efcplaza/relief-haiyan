@@ -16,5 +16,6 @@ class InformationController < ApplicationController
   
   def show
     @info = Information.find(params[:id])
+    @comment = Comment.new
   end
 end

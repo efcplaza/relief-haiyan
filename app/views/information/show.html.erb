@@ -48,7 +48,7 @@
     <div class="form-group">
       <label class="col-sm-4 control-label">Additional information</label>
       <div class="col-sm-8">
-        <p class="form-control-static"><%= @info.comments %></p>
+        <p class="form-control-static"><%= @info.addl_info %></p>
       </div>
     </div>
     
@@ -91,6 +91,37 @@
       <br />
       <div class="fb-share-button" data-href="" data-type="button"></div>
     </div>
+    
+    <table id="comments" class="table">
+      <% @info.comments.each do |c| %>
+        <tr><td><%= c.body %><br /> <strong>-<%= c.name %></strong> on <%= c.created_at%></td></tr>
+      <% end %>
+    </table>
+
+    <%= form_for(@comment, :html => {:class => "add-comment"}) do |c| %>
+    <div class="form-group">
+      <label class="control-label col-sm-3">Add Comment</label>
+      <div class="col-sm-9">
+        <%= c.text_area :body, :class => "form-control" %>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="control-label col-sm-3">Name</label>
+      <div class="col-sm-9">
+        <%= c.text_field :name, :class => "form-control" %>
+      </div>
+    </div>
+    
+    
+    <%= c.hidden_field :information_id, :value => @info.id %>
+    
+    <div class="form-group submit">
+      <%= c.submit "Submit", :class => "btn btn-info pull-right"%>
+    </div>
+    
+    <% end %>
+
   </div>
   
 

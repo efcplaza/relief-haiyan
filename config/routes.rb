@@ -1,6 +1,7 @@
 ReliefHaiyan::Application.routes.draw do
   get "home/index"
   resources :information
+  resources :comments
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
