@@ -8,8 +8,9 @@
         <%= link_to new_information_path do %>
           <button class="btn btn-primary">I need help</button>
         <% end %>
-          <br />
-        <button class="btn btn-success">I can help</button>
+        <%= link_to information_index_path do %>  
+          <button class="btn btn-success">I can help</button>
+        <% end %>
         <br />
       <button class="btn btn-warning">Donate now</button>
       </div>

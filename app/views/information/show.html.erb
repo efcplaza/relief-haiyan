@@ -1,0 +1,97 @@
+<%= render 'home/navbar' %>
+
+<div class="container">
+
+  <div class="col-md-5 form-horizontal show-info">
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Name</label>
+      <div class="col-sm-8">
+        <p class="form-control-static"><%= "#{@info.first_name} #{@info.last_name}" %></p>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Address</label>
+      <div class="col-sm-8">
+        <p class="form-control-static"><%= "#{@info.street_one}, #{@info.street_two} #{@info.city}, #{@info.province}" %></p>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Latest Condition</label>
+      <div class="col-sm-8">
+        <p class="form-control-static"><%= @info.latest_condition %></p>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="col-sm-4 control-label">With relief goods?</label>
+      <div class="col-sm-8">
+        <p class="form-control-static"><%= @info.with_relief_goods == 'true' ? 'Yes' : 'No' %></p>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Mobile phone signal?</label>
+      <div class="col-sm-8">
+        <p class="form-control-static"><%= @info.mobile_signal == 'true' ? 'Yes' : 'No' %></p>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Urgent Needs</label>
+      <div class="col-sm-8">
+        <p class="form-control-static"><%= @info.urgent_needs %></p>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Additional information</label>
+      <div class="col-sm-8">
+        <p class="form-control-static"><%= @info.comments %></p>
+      </div>
+    </div>
+    
+    
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Contact Person</label>
+      <div class="col-sm-8">
+        <p class="form-control-static"><%= @info.contact_person %></p>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Contact Number</label>
+      <div class="col-sm-8">
+        <p class="form-control-static"><%= @info.contact_phone %></p>
+      </div>
+    </div>
+    
+    
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Contact Email</label>
+      <div class="col-sm-8">
+        <p class="form-control-static"><%= @info.contact_email %></p>
+      </div>
+    </div>
+    
+  </div>
+  
+  <div class="col-md-7">
+    <div class="alert alert-danger">
+      <h3>This person needs your help!</h3>
+      <h4>Help us disseminate information about this person.</h4>
+      <p>Philippine Red Cross: (02) 527-0000</p>
+      <p>UNICEF Philippines: (02) 758-1000</p>
+      <p>NDRRMC: (02) 911-5061</p>
+      <p>DSWD: (02) 931-8101</p>
+      
+      <br />
+      <p>You can also share the information using social media.</p>
+      <br />
+      <div class="fb-share-button" data-href="" data-type="button"></div>
+    </div>
+  </div>
+  
+
+</div>

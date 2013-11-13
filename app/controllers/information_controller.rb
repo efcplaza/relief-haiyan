@@ -1,6 +1,7 @@
 class InformationController < ApplicationController
   
   def index
+    @infos = Information.all
   end
   
   def new
@@ -8,9 +9,12 @@ class InformationController < ApplicationController
   end
   
   def create
-    @info = Information.create(params[:information])
+    if @info = Information.create(params[:information])
+      redirect_to information_index_path
+    end
   end
   
   def show
+    @info = Information.find(params[:id])
   end
 end

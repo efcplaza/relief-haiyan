@@ -19,3 +19,24 @@
     padding-right: 15px;
   }
 }
+
+.show-info {
+  
+  border-right: 1px solid #C8C7C9;
+  padding: 10px;
+  
+}
+
+#info-table {
+  td {
+    color: #428BCA;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  tr:hover {
+     cursor: pointer;
+  }
+}
